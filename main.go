@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
 )
 
@@ -24,9 +25,10 @@ func main() {
 
 	if toJSON {
 		wg.Add(pages)
+		var projectsChan = make(chan Project)
 		for page := 1; page <= pages; page++ {
 			fmt.Println(page)
-			go getProjects(lang, page)
+			go getProjects(lang, page, projectsChan)
 		}
 		wg.Wait()
 		close(projectsChan)
@@ -44,24 +46,22 @@ const projectLinkTemplate = "https://github.com/%s/%s"
 
 // Project is type for one github project
 type Project struct {
-	name   string
-	author string
-	descr  string
-	stars  int32
-	topics []string
+	Name   string   `json:"name"`
+	Author string   `json:"full_name"`
+	Descr  string   `json:"description"`
+	Stars  int32    `json:"stargazers_count"`
+	Topics []string `json:"topics"`
 }
 
 func (p *Project) getLink() string {
-	return fmt.Sprintf(projectLinkTemplate, p.author, p.name)
+	return fmt.Sprintf(projectLinkTemplate, p.Author, p.Name)
 }
 
 func (p *Project) getMarkdown() string {
-	return fmt.Sprintf("[%s](%s). %s", p.name, p.getLink(), p.descr)
+	return fmt.Sprintf("[%s](%s). %s", p.Name, p.getLink(), p.Descr)
 }
 
-var projectsChan chan Project
-
-func getProjects(lang string, page int) {
+func getProjects(lang string, page int, projectsChan chan Project) {
 	defer wg.Done()
 
 	// make request
@@ -69,7 +69,16 @@ func getProjects(lang string, page int) {
 	values.Set("q", "language:"+lang)
 	values.Set("page", fmt.Sprintf("%d", page))
 	url := fmt.Sprintf("%s?%s", searchAPI, values.Encode())
-	resp, err := http.Get(url)
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	req.Header.Add("Accept", "application/vnd.github.mercy-preview+json")
+
+	// get response
+	client := &http.Client{}
+	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -78,24 +87,16 @@ func getProjects(lang string, page int) {
 
 	// parse JSON response
 	var data struct {
-		items             []map[string]interface{}
-		totalCount        int64
-		incompleteResults bool
+		Items []Project `json:"items"`
 	}
 	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
 		fmt.Println(err)
 		return
 	}
-
 	// get projects from response
-	fmt.Println(data)
-	for _, info := range data.items {
-		projectsChan <- Project{
-			name:   info["name"].(string),
-			author: info["owner"].(map[string]interface{})["login"].(string),
-			descr:  info["description"].(string),
-			stars:  info["stargazers_count"].(int32),
-			topics: info["topics"].([]string),
-		}
+	for _, project := range data.Items {
+		fmt.Println(project)
+		project.Author = strings.Split(project.Author, "/")[0]
+		projectsChan <- project
 	}
 }
