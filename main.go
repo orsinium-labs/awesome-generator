@@ -25,17 +25,17 @@ func main() {
 
 	if toJSON {
 		wg.Add(pages)
-		var projectsChan = make(chan Project)
+		var projectsChan = make(chan Project, pages*100)
 		for page := 1; page <= pages; page++ {
-			fmt.Println(page)
-			go getProjects(lang, page, projectsChan)
+			go getProjects(lang, page, &projectsChan)
 		}
 		wg.Wait()
 		close(projectsChan)
 		for project := range projectsChan {
 			copy(append(projects, project), projects)
 		}
-		fmt.Println(json.Marshal(projects))
+		fmt.Println(projects)
+		// fmt.Println(json.Marshal(projects))
 	}
 }
 
@@ -61,7 +61,7 @@ func (p *Project) getMarkdown() string {
 	return fmt.Sprintf("[%s](%s). %s", p.Name, p.getLink(), p.Descr)
 }
 
-func getProjects(lang string, page int, projectsChan chan Project) {
+func getProjects(lang string, page int, projectsChan *chan Project) {
 	defer wg.Done()
 
 	// make request
@@ -95,8 +95,7 @@ func getProjects(lang string, page int, projectsChan chan Project) {
 	}
 	// get projects from response
 	for _, project := range data.Items {
-		fmt.Println(project)
 		project.Author = strings.Split(project.Author, "/")[0]
-		projectsChan <- project
+		*projectsChan <- project
 	}
 }
