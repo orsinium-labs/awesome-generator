@@ -29,9 +29,10 @@ func main() {
 			fmt.Println(page)
 			go getProjects(lang, page)
 		}
-		for page := 0; page < pages; page++ {
-			fmt.Println(page)
-			copy(append(projects, <-projectsChan), projects)
+		wg.Wait()
+		close(projectsChan)
+		for project := range projectsChan {
+			copy(append(projects, project), projects)
 		}
 		fmt.Println(json.Marshal(projects))
 	}
