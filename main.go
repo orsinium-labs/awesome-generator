@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"sync"
@@ -25,7 +24,7 @@ func main() {
 
 	if toJSON {
 		wg.Add(pages)
-		for page := 0; page < pages; page++ {
+		for page := 1; page <= pages; page++ {
 			fmt.Println(page)
 			go getProjects(lang, page)
 		}
@@ -75,14 +74,7 @@ func getProjects(lang string, page int) {
 		fmt.Println(err)
 		return
 	}
-
-	// read response
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
 
 	// parse JSON response
 	var data struct {
@@ -90,7 +82,7 @@ func getProjects(lang string, page int) {
 		totalCount        int64
 		incompleteResults bool
 	}
-	if err := json.Unmarshal(body, &data); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
 		fmt.Println(err)
 		return
 	}
