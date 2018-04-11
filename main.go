@@ -111,6 +111,16 @@ func (p *Project) getMarkdown() string {
 	return fmt.Sprintf("1. [%s](%s). %s", p.Name, p.getLink(), p.Descr)
 }
 
+func filter(vs []string, f func(string) bool) []string {
+	vsf := make([]string, 0)
+	for _, v := range vs {
+		if f(v) {
+			vsf = append(vsf, v)
+		}
+	}
+	return vsf
+}
+
 func getProjects(lang string, page int, projectsChan *chan Project) {
 	defer wg.Done()
 
@@ -146,6 +156,9 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 	// get projects from response
 	for _, project := range data.Items {
 		project.Author = strings.Split(project.Author, "/")[0]
+		project.Topics = filter(project.Topics, func(topic string) bool {
+			return !strings.HasPrefix(topic, lang)
+		})
 		*projectsChan <- Project(project)
 	}
 }

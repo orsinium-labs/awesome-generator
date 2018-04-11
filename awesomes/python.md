@@ -60,14 +60,14 @@
 
 ## async
 
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
+1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio 
 1. [uvloop](https://github.com/MagicStack/uvloop). Ultra fast asyncio event loop.
 
 
 ## asyncio
 
 1. [home-assistant](https://github.com/home-assistant/home-assistant). :house_with_garden: Open-source home automation platform running on Python 3
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
+1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio 
 1. [uvloop](https://github.com/MagicStack/uvloop). Ultra fast asyncio event loop.
 1. [gevent](https://github.com/gevent/gevent). Coroutine-based concurrency library for Python
 
@@ -179,7 +179,7 @@
 
 ## chatbot
 
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [ChatterBot](https://github.com/gunthercox/ChatterBot). ChatterBot is a machine learning, conversational dialog engine for creating chat bots
 1. [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot). We have made you a wrapper you can't refuse
 1. [tensorlayer](https://github.com/tensorlayer/tensorlayer). TensorLayer: A Deep Learning and Reinforcement Learning Library for Researchers and Engineers.
@@ -230,7 +230,7 @@
 
 ## cloud-management
 
-1. [salt](https://github.com/saltstack/salt). Software to automate the management and configuration of any infrastructure or application at scale. Get access to the Salt software package repository here:
+1. [salt](https://github.com/saltstack/salt). Software to automate the management and configuration of any infrastructure or application at scale. Get access to the Salt software package repository here: 
 1. [aws-cli](https://github.com/aws/aws-cli). Universal Command Line Interface for Amazon Web Services
 1. [awesome-aws](https://github.com/donnemartin/awesome-aws). A curated list of awesome Amazon Web Services (AWS) libraries, open source repos, guides, blogs, and other resources.  Featuring the Fiery Meter of AWSome.
 1. [aws-shell](https://github.com/awslabs/aws-shell). An integrated shell for working with the AWS CLI.
@@ -373,7 +373,7 @@
 1. [ML-From-Scratch](https://github.com/eriklindernoren/ML-From-Scratch). Machine Learning From Scratch. Bare bones Python implementations of Machine Learning models and algorithms with a focus on transparency and accessibility. Aims to cover everything from Data Mining to Deep Learning.
 1. [tflearn](https://github.com/tflearn/tflearn). Deep learning library featuring a higher-level API for TensorFlow.
 1. [MLAlgorithms](https://github.com/rushter/MLAlgorithms). Minimal and clean examples of machine learning algorithms
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [fast-style-transfer](https://github.com/lengstrom/fast-style-transfer). TensorFlow CNN for fast style transfer! ⚡🖥🎨🖼
 1. [pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial). PyTorch Tutorial for Deep Learning Researchers
 1. [BossSensor](https://github.com/Hironsan/BossSensor). Hide screen when boss is approaching.
@@ -553,7 +553,7 @@
 ## hadoop
 
 1. [data-science-ipython-notebooks](https://github.com/donnemartin/data-science-ipython-notebooks). Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
-1. [luigi](https://github.com/spotify/luigi). Luigi is a Python module that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization etc. It also comes with Hadoop support built in.
+1. [luigi](https://github.com/spotify/luigi). Luigi is a Python module that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization etc. It also comes with Hadoop support built in. 
 
 
 ## http
@@ -565,7 +565,7 @@
 1. [http-prompt](https://github.com/eliangcs/http-prompt). HTTPie + prompt_toolkit = an interactive command-line HTTP client featuring autocomplete and syntax highlighting
 1. [httpbin](https://github.com/kennethreitz/httpbin). HTTP Request & Response Service, written in Python + Flask.
 1. [falcon](https://github.com/falconry/falcon). Falcon is a bare-metal Python web API framework for building high-performance microservices, app backends, and higher-level frameworks.
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
+1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio 
 1. [gunicorn](https://github.com/benoitc/gunicorn). gunicorn 'Green Unicorn' is a WSGI HTTP Server for UNIX, fast clients and sleepy applications.
 1. [werkzeug](https://github.com/pallets/werkzeug). The comprehensive WSGI web application library.
 
@@ -574,13 +574,13 @@
 
 1. [httpie](https://github.com/jakubroztocil/httpie). Modern command line HTTP client – user-friendly curl alternative with intuitive UI, JSON support, syntax highlighting, wget-like downloads, extensions, etc.  https://httpie.org
 1. [http-prompt](https://github.com/eliangcs/http-prompt). HTTPie + prompt_toolkit = an interactive command-line HTTP client featuring autocomplete and syntax highlighting
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
+1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio 
 
 
 ## http-server
 
 1. [httpbin](https://github.com/kennethreitz/httpbin). HTTP Request & Response Service, written in Python + Flask.
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
+1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio 
 1. [gunicorn](https://github.com/benoitc/gunicorn). gunicorn 'Green Unicorn' is a WSGI HTTP Server for UNIX, fast clients and sleepy applications.
 
 
@@ -697,7 +697,7 @@
 1. [MLAlgorithms](https://github.com/rushter/MLAlgorithms). Minimal and clean examples of machine learning algorithms
 1. [nltk](https://github.com/nltk/nltk). NLTK Source
 1. [pattern](https://github.com/clips/pattern). Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [ChatterBot](https://github.com/gunthercox/ChatterBot). ChatterBot is a machine learning, conversational dialog engine for creating chat bots
 1. [awesome-aws](https://github.com/donnemartin/awesome-aws). A curated list of awesome Amazon Web Services (AWS) libraries, open source repos, guides, blogs, and other resources.  Featuring the Fiery Meter of AWSome.
 1. [BossSensor](https://github.com/Hironsan/BossSensor). Hide screen when boss is approaching.
@@ -721,7 +721,7 @@
 
 ## malware
 
-1. [hosts](https://github.com/StevenBlack/hosts). Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category.
+1. [hosts](https://github.com/StevenBlack/hosts). Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category. 
 1. [wifiphisher](https://github.com/wifiphisher/wifiphisher). The Rogue Access Point Framework
 
 
@@ -771,7 +771,7 @@
 1. [gensim](https://github.com/RaRe-Technologies/gensim). Topic Modelling for Humans
 1. [nltk](https://github.com/nltk/nltk). NLTK Source
 1. [pattern](https://github.com/clips/pattern). Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [TextBlob](https://github.com/sloria/TextBlob). Simple, Pythonic, text processing--Sentiment analysis, part-of-speech tagging, noun phrase extraction, translation, and more.
 
 
@@ -814,7 +814,7 @@
 1. [spaCy](https://github.com/explosion/spaCy). 💫 Industrial-strength Natural Language Processing (NLP) with Python and Cython
 1. [gensim](https://github.com/RaRe-Technologies/gensim). Topic Modelling for Humans
 1. [nltk](https://github.com/nltk/nltk). NLTK Source
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [TextBlob](https://github.com/sloria/TextBlob). Simple, Pythonic, text processing--Sentiment analysis, part-of-speech tagging, noun phrase extraction, translation, and more.
 
 
@@ -894,7 +894,7 @@
 ## privacy
 
 1. [macOS-Security-and-Privacy-Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide). A practical guide to securing macOS.
-1. [hosts](https://github.com/StevenBlack/hosts). Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category.
+1. [hosts](https://github.com/StevenBlack/hosts). Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category. 
 
 
 ## programming
@@ -909,167 +909,6 @@
 
 1. [XX-Net](https://github.com/XX-net/XX-Net). a web proxy tool
 1. [mitmproxy](https://github.com/mitmproxy/mitmproxy). An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.
-
-
-## python
-
-1. [awesome-python](https://github.com/vinta/awesome-python). A curated list of awesome Python frameworks, libraries, software and resources
-1. [httpie](https://github.com/jakubroztocil/httpie). Modern command line HTTP client – user-friendly curl alternative with intuitive UI, JSON support, syntax highlighting, wget-like downloads, extensions, etc.  https://httpie.org
-1. [thefuck](https://github.com/nvbn/thefuck). Magnificent app which corrects your previous console command.
-1. [flask](https://github.com/pallets/flask). The Python micro framework for building web applications.
-1. [django](https://github.com/django/django). The Web framework for perfectionists with deadlines.
-1. [requests](https://github.com/requests/requests). Python HTTP Requests for Humans™ ✨🍰✨
-1. [ansible](https://github.com/ansible/ansible). Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
-1. [keras](https://github.com/keras-team/keras). Deep Learning for humans
-1. [scikit-learn](https://github.com/scikit-learn/scikit-learn). scikit-learn: machine learning in Python
-1. [scrapy](https://github.com/scrapy/scrapy). Scrapy, a fast high-level web crawling & scraping framework for Python.
-1. [system-design-primer](https://github.com/donnemartin/system-design-primer). Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.
-1. [certbot](https://github.com/certbot/certbot). Certbot is EFF's tool to obtain certs from Let's Encrypt and (optionally) auto-enable HTTPS on your server.  It can also act as a client for any other CA that uses the ACME protocol.
-1. [tornado](https://github.com/tornadoweb/tornado). Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.
-1. [python-patterns](https://github.com/faif/python-patterns). A collection of design patterns/idioms in Python
-1. [reddit](https://github.com/reddit-archive/reddit). historical code from reddit.com
-1. [pandas](https://github.com/pandas-dev/pandas). Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more
-1. [home-assistant](https://github.com/home-assistant/home-assistant). :house_with_garden: Open-source home automation platform running on Python 3
-1. [interactive-coding-challenges](https://github.com/donnemartin/interactive-coding-challenges). Interactive Python coding interview challenges (algorithms and data structures).  Includes Anki flashcards.
-1. [ipython](https://github.com/ipython/ipython). Official repository for IPython itself. Other repos in the IPython organization contain things like the website, documentation builds, etc.
-1. [face_recognition](https://github.com/ageitgey/face_recognition). The world's simplest facial recognition api for Python and the command line
-1. [compose](https://github.com/docker/compose). Define and run multi-container applications with Docker
-1. [data-science-ipython-notebooks](https://github.com/donnemartin/data-science-ipython-notebooks). Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
-1. [algorithms](https://github.com/keon/algorithms). Minimal examples of data structures and algorithms in Python
-1. [sqlmap](https://github.com/sqlmapproject/sqlmap). Automatic SQL injection and database takeover tool
-1. [pyspider](https://github.com/binux/pyspider). A Powerful Spider(Web Crawler) System in Python.
-1. [mitmproxy](https://github.com/mitmproxy/mitmproxy). An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.
-1. [pipenv](https://github.com/pypa/pipenv).  Python Development Workflow for Humans.
-1. [glances](https://github.com/nicolargo/glances). Glances an Eye on your system. A top/htop alternative.
-1. [odoo](https://github.com/odoo/odoo). Odoo. Open Source Apps To Grow Your Business.
-1. [celery](https://github.com/celery/celery). Distributed Task Queue (development branch)
-1. [hosts](https://github.com/StevenBlack/hosts). Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category.
-1. [python-fire](https://github.com/google/python-fire). Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.
-1. [luigi](https://github.com/spotify/luigi). Luigi is a Python module that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization etc. It also comes with Hadoop support built in.
-1. [spaCy](https://github.com/explosion/spaCy). 💫 Industrial-strength Natural Language Processing (NLP) with Python and Cython
-1. [redash](https://github.com/getredash/redash). Make Your Company Data Driven. Connect to any data source, easily visualize and share your data.
-1. [powerline](https://github.com/powerline/powerline). Powerline is a statusline plugin for vim, and provides statuslines and prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.
-1. [salt](https://github.com/saltstack/salt). Software to automate the management and configuration of any infrastructure or application at scale. Get access to the Salt software package repository here:
-1. [pelican](https://github.com/getpelican/pelican). Static site generator that supports Markdown and reST syntax. Powered by Python.
-1. [beets](https://github.com/beetbox/beets). music library manager and MusicBrainz tagger
-1. [bokeh](https://github.com/bokeh/bokeh). Interactive Web Plotting for Python
-1. [kivy](https://github.com/kivy/kivy). Open source UI framework written in Python, running on Windows, Linux, macOS, Android and iOS
-1. [locust](https://github.com/locustio/locust). Scalable user load testing tool written in Python
-1. [autojump](https://github.com/wting/autojump). A cd command that learns - easily navigate directories from the command line
-1. [yapf](https://github.com/google/yapf). A formatter for Python files
-1. [http-prompt](https://github.com/eliangcs/http-prompt). HTTPie + prompt_toolkit = an interactive command-line HTTP client featuring autocomplete and syntax highlighting
-1. [zipline](https://github.com/quantopian/zipline). Zipline, a Pythonic Algorithmic Trading Library
-1. [Zappa](https://github.com/Miserlou/Zappa). Serverless Python
-1. [gensim](https://github.com/RaRe-Technologies/gensim). Topic Modelling for Humans
-1. [pgcli](https://github.com/dbcli/pgcli). Postgres CLI with autocompletion and syntax highlighting
-1. [wtfpython](https://github.com/satwikkansal/wtfpython). A collection of surprising Python snippets and lesser-known features.
-1. [speedtest-cli](https://github.com/sivel/speedtest-cli). Command line interface for testing internet bandwidth using speedtest.net
-1. [wifiphisher](https://github.com/wifiphisher/wifiphisher). The Rogue Access Point Framework
-1. [nltk](https://github.com/nltk/nltk). NLTK Source
-1. [zulip](https://github.com/zulip/zulip). Zulip server - powerful open source team chat
-1. [pattern](https://github.com/clips/pattern). Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.
-1. [coursera-dl](https://github.com/coursera-dl/coursera-dl). Script for downloading Coursera.org videos and naming them.
-1. [newspaper](https://github.com/codelucas/newspaper). News, full-text, and article metadata extraction in Python 3. Advanced docs:
-1. [faker](https://github.com/joke2k/faker). Faker is a Python package that generates fake data for you.
-1. [django-cms](https://github.com/divio/django-cms). The easy-to-use and developer-friendly CMS
-1. [ChatterBot](https://github.com/gunthercox/ChatterBot). ChatterBot is a machine learning, conversational dialog engine for creating chat bots
-1. [gitsome](https://github.com/donnemartin/gitsome). A supercharged Git/GitHub command line interface (CLI).  An official integration for GitHub and GitHub Enterprise: https://github.com/works-with/category/desktop-tools
-1. [musicbox](https://github.com/darknessomi/musicbox). 网易云音乐命令行版本
-1. [click](https://github.com/pallets/click). Python composable command line utility
-1. [mycli](https://github.com/dbcli/mycli). A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting.
-1. [tqdm](https://github.com/tqdm/tqdm). A fast, extensible progress bar for Python and CLI
-1. [tushare](https://github.com/waditu/tushare). TuShare is a utility for crawling historical data of China stocks
-1. [wagtail](https://github.com/wagtail/wagtail). A Django content management system focused on flexibility and user experience
-1. [routersploit](https://github.com/reverse-shell/routersploit). The Router Exploitation Framework
-1. [prophet](https://github.com/facebook/prophet). Tool for producing high quality forecasts for time series data that has multiple seasonality with linear or non-linear growth.
-1. [ajenti](https://github.com/ajenti/ajenti). Ajenti Core and stock plugins
-1. [jinja](https://github.com/pallets/jinja). The Jinja2 template engine
-1. [peewee](https://github.com/coleifer/peewee). a small, expressive orm -- supports postgresql, mysql and sqlite
-1. [mopidy](https://github.com/mopidy/mopidy). Mopidy is an extensible music server that plays music from local disk, Spotify, SoundCloud, Google Play Music, and more. You edit the playlist from any phone, tablet, or computer using a range of MPD and web clients.
-1. [falcon](https://github.com/falconry/falcon). Falcon is a bare-metal Python web API framework for building high-performance microservices, app backends, and higher-level frameworks.
-1. [aiohttp](https://github.com/aio-libs/aiohttp). HTTP client/server framework for asyncio
-1. [tweepy](https://github.com/tweepy/tweepy). Twitter for Python!
-1. [TextBlob](https://github.com/sloria/TextBlob). Simple, Pythonic, text processing--Sentiment analysis, part-of-speech tagging, noun phrase extraction, translation, and more.
-1. [eve](https://github.com/pyeve/eve). REST API framework designed for human beings
-1. [q](https://github.com/harelba/q). q - Run SQL directly on CSV or TSV files  
-1. [wechat-deleted-friends](https://github.com/0x5e/wechat-deleted-friends). 查看被删的微信好友
-1. [moviepy](https://github.com/Zulko/moviepy). Video editing with Python
-1. [sympy](https://github.com/sympy/sympy). A computer algebra system written in pure Python
-1. [SpaceshipGenerator](https://github.com/a1studmuffin/SpaceshipGenerator). A Blender script to procedurally generate 3D spaceships
-1. [Pillow](https://github.com/python-pillow/Pillow). The friendly PIL fork (Python Imaging Library)
-1. [gunicorn](https://github.com/benoitc/gunicorn). gunicorn 'Green Unicorn' is a WSGI HTTP Server for UNIX, fast clients and sleepy applications.
-1. [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot). We have made you a wrapper you can't refuse
-1. [rq](https://github.com/rq/rq). Simple job queues for Python
-1. [dash](https://github.com/plotly/dash). Interactive, Reactive Web Apps for Python. Dash Is Productive™
-1. [uvloop](https://github.com/MagicStack/uvloop). Ultra fast asyncio event loop.
-1. [python-for-android](https://github.com/kivy/python-for-android). Turn your Python application into an Android APK
-1. [gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard). Modular visual interface for GDB in Python
-1. [Python](https://github.com/TheAlgorithms/Python). All Algorithms implemented in Python
-1. [voltron](https://github.com/snare/voltron). A hacky debugger UI for hackers
-1. [readthedocs.org](https://github.com/rtfd/readthedocs.org). The source code that powers readthedocs.org
-1. [records](https://github.com/kennethreitz/records). SQL for Humans™
-1. [HelloGitHub](https://github.com/521xueweihan/HelloGitHub). :octocat:分享 GitHub 上好玩、容易上手的项目，帮你找到编程的乐趣。欢迎推荐、自荐项目，让更多人知道你的项目⭐️
-1. [InstaPy](https://github.com/timgrossmann/InstaPy). 📷 Instagram Bot - Like/Comment/Follow Automation Script
-1. [calibre](https://github.com/kovidgoyal/calibre). The official source code repository for the calibre ebook manager
-1. [chalice](https://github.com/aws/chalice). Python Serverless Microframework for AWS
-1. [flasky](https://github.com/miguelgrinberg/flasky). Companion code to my O'Reilly book "Flask Web Development", second edition.
-1. [networkx](https://github.com/networkx/networkx). Official NetworkX source code repository.  
-1. [gevent](https://github.com/gevent/gevent). Coroutine-based concurrency library for Python
-1. [LeetCode](https://github.com/kamyu104/LeetCode). :pencil: Python / C++ 11 Solutions of All LeetCode Questions
-1. [werkzeug](https://github.com/pallets/werkzeug). The comprehensive WSGI web application library.
-1. [pyinstaller](https://github.com/pyinstaller/pyinstaller). Freeze (package) Python programs into stand-alone executables
-1. [gitfiti](https://github.com/gelstudios/gitfiti). abusing github commit history for the lulz
-1. [PyMySQL](https://github.com/PyMySQL/PyMySQL). Pure Python MySQL Client
-1. [tpot](https://github.com/EpistasisLab/tpot). A Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
-1. [apistar](https://github.com/encode/apistar). A smart Web API framework, designed for Python 3. 🌟
-1. [lbry](https://github.com/lbryio/lbry). A fully decentralized network for distributing data
-1. [powerline-shell](https://github.com/b-ryan/powerline-shell). A beautiful and useful prompt for your shell
-1. [TensorFlow-World](https://github.com/astorfi/TensorFlow-World). :earth_americas: Simple and ready-to-use tutorials for TensorFlow
-1. [pwntools](https://github.com/Gallopsled/pwntools). CTF framework and exploit development library
-1. [pysheeet](https://github.com/crazyguitar/pysheeet). Python Cheat Sheet
-1. [awx](https://github.com/ansible/awx). AWX Project
-1. [chainer](https://github.com/chainer/chainer). A flexible framework of neural networks for deep learning
-1. [PokemonGo-Bot](https://github.com/PokemonGoF/PokemonGo-Bot). The Pokemon Go Bot, baking with community.
-1. [tensorlayer](https://github.com/tensorlayer/tensorlayer). TensorLayer: A Deep Learning and Reinforcement Learning Library for Researchers and Engineers.
-1. [saws](https://github.com/donnemartin/saws). A supercharged AWS command line interface (CLI).
-1. [WebHubBot](https://github.com/xiyouMc/WebHubBot). Python + Scrapy + MongoDB . 5 million data per day !!!💥  The world's largest website.  
-1. [psutil](https://github.com/giampaolo/psutil). Cross-platform lib for process and system monitoring in Python
-
-
-## python-2
-
-1. [TextBlob](https://github.com/sloria/TextBlob). Simple, Pythonic, text processing--Sentiment analysis, part-of-speech tagging, noun phrase extraction, translation, and more.
-1. [pysheeet](https://github.com/crazyguitar/pysheeet). Python Cheat Sheet
-
-
-## python-3
-
-1. [TextBlob](https://github.com/sloria/TextBlob). Simple, Pythonic, text processing--Sentiment analysis, part-of-speech tagging, noun phrase extraction, translation, and more.
-1. [Pillow](https://github.com/python-pillow/Pillow). The friendly PIL fork (Python Imaging Library)
-1. [uvloop](https://github.com/MagicStack/uvloop). Ultra fast asyncio event loop.
-1. [pyinstaller](https://github.com/pyinstaller/pyinstaller). Freeze (package) Python programs into stand-alone executables
-1. [pysheeet](https://github.com/crazyguitar/pysheeet). Python Cheat Sheet
-
-
-## python-library
-
-1. [awesome-python](https://github.com/vinta/awesome-python). A curated list of awesome Python frameworks, libraries, software and resources
-1. [celery](https://github.com/celery/celery). Distributed Task Queue (development branch)
-1. [speedtest-cli](https://github.com/sivel/speedtest-cli). Command line interface for testing internet bandwidth using speedtest.net
-
-
-## python2
-
-1. [celery](https://github.com/celery/celery). Distributed Task Queue (development branch)
-1. [iScript](https://github.com/PeterDing/iScript). 各种脚本 -- 关于 虾米 xiami.com, 百度网盘 pan.baidu.com, 115网盘 115.com, 网易音乐 music.163.com, 百度音乐 music.baidu.com, 360网盘/云盘 yunpan.cn, 视频解析 flvxz.com, bt torrent ↔ magnet, ed2k 搜索, tumblr 图片下载, unzip
-
-
-## python3
-
-1. [celery](https://github.com/celery/celery). Distributed Task Queue (development branch)
-1. [zulip](https://github.com/zulip/zulip). Zulip server - powerful open source team chat
-1. [chalice](https://github.com/aws/chalice). Python Serverless Microframework for AWS
-1. [fuck-login](https://github.com/xchaoinfo/fuck-login). 模拟登录一些知名的网站，为了方便爬取需要登录的网站
 
 
 ## pytorch
@@ -1204,7 +1043,7 @@
 1. [keras](https://github.com/keras-team/keras). Deep Learning for humans
 1. [data-science-ipython-notebooks](https://github.com/donnemartin/data-science-ipython-notebooks). Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
 1. [tflearn](https://github.com/tflearn/tflearn). Deep learning library featuring a higher-level API for TensorFlow.
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [Mask_RCNN](https://github.com/matterport/Mask_RCNN). Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow
 1. [facenet](https://github.com/davidsandberg/facenet). Face recognition using Tensorflow
 1. [TensorFlow-World](https://github.com/astorfi/TensorFlow-World). :earth_americas: Simple and ready-to-use tutorials for TensorFlow
@@ -1248,7 +1087,7 @@
 
 ## tutorial
 
-1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research.
+1. [stanford-tensorflow-tutorials](https://github.com/chiphuyen/stanford-tensorflow-tutorials). This repository contains code examples for the Stanford's course: TensorFlow for Deep Learning Research. 
 1. [pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial). PyTorch Tutorial for Deep Learning Researchers
 1. [have-fun-with-machine-learning](https://github.com/humphd/have-fun-with-machine-learning). An absolute beginner's guide to Machine Learning and Image Classification with Neural Networks
 
