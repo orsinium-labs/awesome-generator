@@ -23,6 +23,7 @@ func main() {
 	var projects []Project
 
 	if lang != "" {
+		// download and save JSON from github
 		wg.Add(pages)
 		var projectsChan = make(chan Project, pages*100)
 		for page := 1; page <= pages; page++ {
@@ -40,7 +41,14 @@ func main() {
 		}
 		os.Stdout.Write(b)
 	} else {
-
+		// generate markdown
+		if err := json.NewDecoder(os.Stdin).Decode(&projects); err != nil {
+			fmt.Println(err)
+			return
+		}
+		for _, project := range projects {
+			fmt.Println(project.getMarkdown())
+		}
 	}
 }
 
@@ -72,7 +80,7 @@ func (p *Project) getLink() string {
 }
 
 func (p *Project) getMarkdown() string {
-	return fmt.Sprintf("[%s](%s). %s", p.Name, p.getLink(), p.Descr)
+	return fmt.Sprintf("1. [%s](%s). %s", p.Name, p.getLink(), p.Descr)
 }
 
 func getProjects(lang string, page int, projectsChan *chan Project) {
