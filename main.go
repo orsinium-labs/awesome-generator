@@ -6,24 +6,23 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"sync"
 )
 
 func main() {
 	var lang string
-	var toJSON bool
 	var pages int
 
-	flag.StringVar(&lang, "l", "go", "")
-	flag.BoolVar(&toJSON, "json", true, "")
+	flag.StringVar(&lang, "l", "", "")
 	flag.IntVar(&pages, "pages", 1, "")
 
 	flag.Parse()
 
 	var projects []Project
 
-	if toJSON {
+	if lang != "" {
 		wg.Add(pages)
 		var projectsChan = make(chan Project, pages*100)
 		for page := 1; page <= pages; page++ {
@@ -32,10 +31,16 @@ func main() {
 		wg.Wait()
 		close(projectsChan)
 		for project := range projectsChan {
-			copy(append(projects, project), projects)
+			projects = append(projects, project)
 		}
-		fmt.Println(projects)
-		// fmt.Println(json.Marshal(projects))
+		b, err := json.Marshal(projects)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		os.Stdout.Write(b)
+	} else {
+
 	}
 }
 
@@ -46,6 +51,15 @@ const projectLinkTemplate = "https://github.com/%s/%s"
 
 // Project is type for one github project
 type Project struct {
+	Name   string   `json:"name"`
+	Author string   `json:"author"`
+	Descr  string   `json:"description"`
+	Stars  int32    `json:"stars"`
+	Topics []string `json:"topics"`
+}
+
+// ProjectImport is type for one github project importing
+type ProjectImport struct {
 	Name   string   `json:"name"`
 	Author string   `json:"full_name"`
 	Descr  string   `json:"description"`
@@ -87,7 +101,7 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 
 	// parse JSON response
 	var data struct {
-		Items []Project `json:"items"`
+		Items []ProjectImport `json:"items"`
 	}
 	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
 		fmt.Println(err)
@@ -96,6 +110,6 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 	// get projects from response
 	for _, project := range data.Items {
 		project.Author = strings.Split(project.Author, "/")[0]
-		*projectsChan <- project
+		*projectsChan <- Project(project)
 	}
 }
