@@ -10,6 +10,8 @@ import (
 	"sort"
 	"strings"
 	"sync"
+
+	"github.com/bradfitz/slice"
 )
 
 func main() {
@@ -67,6 +69,9 @@ func main() {
 			topicProjects = topics[topicName]
 			if len(topicProjects) > 1 {
 				fmt.Printf("\n\n## %s\n\n", topicName)
+				slice.Sort(topicProjects[:], func(i, j int) bool {
+					return topicProjects[i].Stars > topicProjects[j].Stars
+				})
 				for _, project := range topicProjects {
 					fmt.Println(project.getMarkdown())
 				}
