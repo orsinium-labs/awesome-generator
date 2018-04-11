@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"sort"
 	"strings"
 	"sync"
 )
@@ -16,7 +17,7 @@ func main() {
 	var pages int
 
 	flag.StringVar(&lang, "l", "", "")
-	flag.IntVar(&pages, "pages", 1, "")
+	flag.IntVar(&pages, "pages", 10, "")
 
 	flag.Parse()
 
@@ -42,12 +43,34 @@ func main() {
 		os.Stdout.Write(b)
 	} else {
 		// generate markdown
+		// decode JSON
 		if err := json.NewDecoder(os.Stdin).Decode(&projects); err != nil {
 			fmt.Println(err)
 			return
 		}
+		// group projects by topics
+		topics := make(map[string][]Project)
+		var topicsNames []string
 		for _, project := range projects {
-			fmt.Println(project.getMarkdown())
+			for _, topic := range project.Topics {
+				if topics[topic] == nil {
+					topicsNames = append(topicsNames, topic)
+				}
+				topics[topic] = append(topics[topic], project)
+			}
+		}
+		// sort topics
+		sort.Strings(topicsNames)
+		// generate markdown
+		var topicProjects []Project
+		for _, topicName := range topicsNames {
+			topicProjects = topics[topicName]
+			if len(topicProjects) > 1 {
+				fmt.Printf("\n\n## %s\n\n", topicName)
+				for _, project := range topicProjects {
+					fmt.Println(project.getMarkdown())
+				}
+			}
 		}
 	}
 }
