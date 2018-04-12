@@ -63,7 +63,7 @@ func dumpProjects(lang string, pages int) ([]byte, error) {
 	return dump, nil
 }
 
-// generate markdown
+// generate markdown from projects list
 func makeMarkdown(projects []Project) {
 	// group projects by topics
 	topics := make(map[string][]Project)
@@ -76,9 +76,17 @@ func makeMarkdown(projects []Project) {
 			topics[topic] = append(topics[topic], project)
 		}
 	}
+
 	// sort topics
 	sort.Strings(topicsNames)
-	// generate markdown
+
+	for _, topicName := range topicsNames {
+		if len(topics[topicName]) > 1 {
+			fmt.Printf("1. [%s](#%s)\n", topicName, topicName)
+		}
+	}
+
+	// generate projects list
 	var topicProjects []Project
 	for _, topicName := range topicsNames {
 		topicProjects = topics[topicName]
