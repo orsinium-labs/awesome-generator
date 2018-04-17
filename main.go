@@ -65,10 +65,12 @@ func dumpProjects(lang string, pages int) ([]byte, error) {
 
 // generate markdown from projects list
 func makeMarkdown(projects []Project) {
+	totalProjectsCount := 0
 	// group projects by topics
 	topics := make(map[string][]Project)
 	var topicsNames []string
 	for _, project := range projects {
+		totalProjectsCount++
 		for _, topic := range project.Topics {
 			if topics[topic] == nil {
 				topicsNames = append(topicsNames, topic)
@@ -80,24 +82,27 @@ func makeMarkdown(projects []Project) {
 	// sort topics
 	sort.Strings(topicsNames)
 
+	// filter topics
+	topicsNames = filter(topicsNames, func(topicName string) bool {
+		l := len(topics[topicName])
+		return l > 1 && l <= totalProjectsCount/5
+	})
+
+	// generate TOC
 	for _, topicName := range topicsNames {
-		if len(topics[topicName]) > 1 {
-			fmt.Printf("1. [%s](#%s)\n", topicName, topicName)
-		}
+		fmt.Printf("1. [%s](#%s)\n", topicName, topicName)
 	}
 
 	// generate projects list
 	var topicProjects []Project
 	for _, topicName := range topicsNames {
 		topicProjects = topics[topicName]
-		if len(topicProjects) > 1 {
-			fmt.Printf("\n\n## %s\n\n", topicName)
-			slice.Sort(topicProjects[:], func(i, j int) bool {
-				return topicProjects[i].Stars > topicProjects[j].Stars
-			})
-			for _, project := range topicProjects {
-				fmt.Println(project.getMarkdown())
-			}
+		fmt.Printf("\n\n## %s\n\n", topicName)
+		slice.Sort(topicProjects[:], func(i, j int) bool {
+			return topicProjects[i].Stars > topicProjects[j].Stars
+		})
+		for _, project := range topicProjects {
+			fmt.Println(project.getMarkdown())
 		}
 	}
 }
@@ -184,7 +189,20 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 	for _, project := range data.Items {
 		project.Author = strings.Split(project.Author, "/")[0]
 		project.Topics = filter(project.Topics, func(topic string) bool {
-			return !strings.HasPrefix(topic, lang)
+			// doesn't starts wirh language - ok
+			if !strings.HasPrefix(topic, lang) {
+				return true
+			}
+			// starts with "lang-" - bad
+			if strings.HasPrefix(topic, lang+"-") {
+				return false
+			}
+			// near to lang - bad
+			if len(topic)-len(lang) < 3 {
+				return false
+			}
+			// ok otherwise
+			return true
 		})
 		*projectsChan <- Project(project)
 	}
