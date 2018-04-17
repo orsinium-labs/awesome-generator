@@ -19,3 +19,9 @@ Generate awesome list:
 ```bash
 cat python.json | go run main.go > python.md
 ```
+
+Keys:
+
+* `-l` -- language. `go run main.go -l python`
+* `-t` -- topic. `go run main.go -t monitoring`
+* `--pages` -- count of pages (default 10). `go run main.go -l python --pages 5`
