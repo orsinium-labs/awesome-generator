@@ -15,10 +15,12 @@ import (
 )
 
 func main() {
+	var dumpjson bool
 	var lang string
 	var topic string
 	var pages int
 
+	flag.BoolVar(&dumpjson, "j", false, "")
 	flag.StringVar(&lang, "l", "", "")
 	flag.StringVar(&topic, "t", "", "")
 	flag.IntVar(&pages, "pages", 10, "")
@@ -31,15 +33,17 @@ func main() {
 			os.Stderr.WriteString(err.Error())
 			return
 		}
-		os.Stdout.Write(data)
-	} else {
-		var projects []Project
-		// decode JSON
-		if err := json.NewDecoder(os.Stdin).Decode(&projects); err != nil {
-			fmt.Println(err)
-			return
+		if dumpjson {
+			os.Stdout.Write(data)
+		} else {
+			var projects []Project
+			// decode JSON
+			if err := json.Unmarshal(data, &projects); err != nil {
+				os.Stderr.WriteString(err.Error())
+				return
+			}
+			makeMarkdown(projects)
 		}
-		makeMarkdown(projects)
 	}
 }
 

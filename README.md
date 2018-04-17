@@ -8,20 +8,21 @@ Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/gen
 
 Let's generate awesome for Python!
 
-Download and save data from Github API:
-
-```bash
-go run main.go -l python > python.json
-```
-
 Generate awesome list:
 
 ```bash
-cat python.json | go run main.go > python.md
+go run main.go -l python > python.md
+```
+
+Download and save data from Github API:
+
+```bash
+go run main.go -l python -j > python.json
 ```
 
 Keys:
 
 * `-l` -- language. `go run main.go -l python`
 * `-t` -- topic. `go run main.go -t monitoring`
+* `-j` -- dump json. `go run main.go -l python -j`
 * `--pages` -- count of pages (default 10). `go run main.go -l python --pages 5`
