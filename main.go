@@ -16,15 +16,17 @@ import (
 
 func main() {
 	var lang string
+	var topic string
 	var pages int
 
 	flag.StringVar(&lang, "l", "", "")
+	flag.StringVar(&topic, "t", "", "")
 	flag.IntVar(&pages, "pages", 10, "")
 
 	flag.Parse()
 
-	if lang != "" {
-		data, err := dumpProjects(lang, pages)
+	if lang != "" || topic != "" {
+		data, err := dumpProjects(lang, topic, pages)
 		if err != nil {
 			os.Stderr.WriteString(err.Error())
 			return
@@ -42,11 +44,11 @@ func main() {
 }
 
 // download and save JSON from github
-func dumpProjects(lang string, pages int) ([]byte, error) {
+func dumpProjects(lang string, topic string, pages int) ([]byte, error) {
 	wg.Add(pages)
 	var projectsChan = make(chan Project, pages*100)
 	for page := 1; page <= pages; page++ {
-		go getProjects(lang, page, &projectsChan)
+		go getProjects(lang, topic, page, &projectsChan)
 	}
 	wg.Wait()
 	close(projectsChan)
@@ -153,12 +155,16 @@ func filter(vs []string, f func(string) bool) []string {
 }
 
 // retrieve and extract projects from Github API
-func getProjects(lang string, page int, projectsChan *chan Project) {
+func getProjects(lang string, topic string, page int, projectsChan *chan Project) {
 	defer wg.Done()
 
 	// make request
 	values := url.Values{}
-	values.Set("q", "language:"+lang)
+	if lang != "" {
+		values.Set("q", "language:"+lang)
+	} else if topic != "" {
+		values.Set("q", "topic:"+topic)
+	}
 	values.Set("page", fmt.Sprintf("%d", page))
 	url := fmt.Sprintf("%s?%s", searchAPI, values.Encode())
 	req, err := http.NewRequest("GET", url, nil)
@@ -166,6 +172,7 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 		fmt.Println(err)
 		return
 	}
+	// demand topics list
 	req.Header.Add("Accept", "application/vnd.github.mercy-preview+json")
 
 	// get response
@@ -185,6 +192,7 @@ func getProjects(lang string, page int, projectsChan *chan Project) {
 		fmt.Println(err)
 		return
 	}
+	lang = topic // for filtering
 	// get projects from response
 	for _, project := range data.Items {
 		project.Author = strings.Split(project.Author, "/")[0]
