@@ -39,3 +39,4 @@ cat python.json | go run main.go > python.md
 * `-t` -- topic. `go run main.go -t docker`
 * `--json` -- dump projects to json. `go run main.go -l python --json`
 * `--pages` -- count of pages (default 10). `go run main.go -l python --pages 5`
+* `--min` -- minimum projects into one section (default 2). `go run main.go -l python --min 3`

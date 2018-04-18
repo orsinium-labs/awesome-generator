@@ -17,13 +17,15 @@ import (
 func main() {
 	var dumpjson bool
 	var lang string
-	var topic string
+	var min int
 	var pages int
+	var topic string
 
 	flag.BoolVar(&dumpjson, "json", false, "")
+	flag.IntVar(&min, "min", 2, "")
+	flag.IntVar(&pages, "pages", 10, "")
 	flag.StringVar(&lang, "l", "", "")
 	flag.StringVar(&topic, "t", "", "")
-	flag.IntVar(&pages, "pages", 10, "")
 
 	flag.Parse()
 
@@ -43,7 +45,7 @@ func main() {
 			os.Stdout.Write(data)
 		} else {
 			// generate awesome list
-			makeMarkdown(projects)
+			makeMarkdown(projects, min)
 		}
 	} else {
 		// get projects as JSON from stdin
@@ -53,7 +55,7 @@ func main() {
 			return
 		}
 		// generate awesome list
-		makeMarkdown(projects)
+		makeMarkdown(projects, min)
 	}
 }
 
@@ -74,7 +76,7 @@ func getProjects(lang string, topic string, pages int) (projects []Project) {
 }
 
 // makeMarkdown generate markdown from projects list
-func makeMarkdown(projects []Project) {
+func makeMarkdown(projects []Project, min int) {
 	totalProjectsCount := 0
 	// group projects by topics
 	topics := make(map[string][]Project)
@@ -95,7 +97,7 @@ func makeMarkdown(projects []Project) {
 	// filter topics
 	topicsNames = filter(topicsNames, func(topicName string) bool {
 		l := len(topics[topicName])
-		return l > 1 && l <= totalProjectsCount/5
+		return l >= min && l <= totalProjectsCount/5
 	})
 
 	// generate TOC
