@@ -1,8 +1,6 @@
 # Awesome generator
 
-<h1 align="center">
-	![Awesome Generator logo](logo.png)
-</h1>
+![Awesome Generator logo](logo.png)
 
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
