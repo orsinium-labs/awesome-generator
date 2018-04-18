@@ -21,11 +21,11 @@ func main() {
 	var pages int
 	var topic string
 
-	flag.BoolVar(&dumpjson, "json", false, "")
-	flag.IntVar(&min, "min", 2, "")
-	flag.IntVar(&pages, "pages", 10, "")
-	flag.StringVar(&lang, "l", "", "")
-	flag.StringVar(&topic, "t", "", "")
+	flag.BoolVar(&dumpjson, "json", false, "dump projects to json")
+	flag.IntVar(&min, "min", 2, "minimum projects into one section")
+	flag.IntVar(&pages, "pages", 10, "count of pages")
+	flag.StringVar(&lang, "l", "", "language")
+	flag.StringVar(&topic, "t", "", "topic")
 
 	flag.Parse()
 
