@@ -6,23 +6,36 @@ Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/gen
 
 ## Usage
 
-Let's generate awesome for Python!
-
-Generate awesome list:
+Generate awesome list for language:
 
 ```bash
 go run main.go -l python > python.md
 ```
 
-Download and save data from Github API:
+Generate awesome list for topic:
 
 ```bash
-go run main.go -l python -j > python.json
+go run main.go -t docker > docker.md
 ```
 
-Keys:
+## Advanced usage
+
+Save projects to JSON:
+
+```bash
+go run main.go -l python --json > python.json
+```
+
+Generate awesome list from JSON:
+
+```bash
+cat python.json | go run main.go > python.md
+```
+
+
+## Command line arguments
 
 * `-l` -- language. `go run main.go -l python`
-* `-t` -- topic. `go run main.go -t monitoring`
-* `-j` -- dump json. `go run main.go -l python -j`
+* `-t` -- topic. `go run main.go -t docker`
+* `--json` -- dump projects to json. `go run main.go -l python --json`
 * `--pages` -- count of pages (default 10). `go run main.go -l python --pages 5`

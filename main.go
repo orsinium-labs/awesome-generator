@@ -20,56 +20,60 @@ func main() {
 	var topic string
 	var pages int
 
-	flag.BoolVar(&dumpjson, "j", false, "")
+	flag.BoolVar(&dumpjson, "json", false, "")
 	flag.StringVar(&lang, "l", "", "")
 	flag.StringVar(&topic, "t", "", "")
 	flag.IntVar(&pages, "pages", 10, "")
 
 	flag.Parse()
 
+	var projects []Project
+
+	// download projects from Github and dump into JSON
 	if lang != "" || topic != "" {
-		data, err := dumpProjects(lang, topic, pages)
+		// download projects from Github
+		projects = getProjects(lang, topic, pages)
+		// dump projects to JSON
+		if dumpjson {
+			data, err := json.Marshal(projects)
+			if err != nil {
+				os.Stderr.WriteString(err.Error())
+				return
+			}
+			os.Stdout.Write(data)
+		} else {
+			// generate awesome list
+			makeMarkdown(projects)
+		}
+	} else {
+		// get projects as JSON from stdin
+		err := json.NewDecoder(os.Stdin).Decode(&projects)
 		if err != nil {
 			os.Stderr.WriteString(err.Error())
 			return
 		}
-		if dumpjson {
-			os.Stdout.Write(data)
-		} else {
-			var projects []Project
-			// decode JSON
-			if err := json.Unmarshal(data, &projects); err != nil {
-				os.Stderr.WriteString(err.Error())
-				return
-			}
-			makeMarkdown(projects)
-		}
+		// generate awesome list
+		makeMarkdown(projects)
 	}
 }
 
-// download and save JSON from github
-func dumpProjects(lang string, topic string, pages int) ([]byte, error) {
+// getProjects download projects from Github and return it
+func getProjects(lang string, topic string, pages int) (projects []Project) {
 	wg.Add(pages)
 	var projectsChan = make(chan Project, pages*100)
 	for page := 1; page <= pages; page++ {
-		go getProjects(lang, topic, page, &projectsChan)
+		go downloadProjects(lang, topic, page, &projectsChan)
 	}
 	wg.Wait()
 	close(projectsChan)
 
-	var projects []Project
 	for project := range projectsChan {
 		projects = append(projects, project)
 	}
-	dump, err := json.Marshal(projects)
-	if err != nil {
-		fmt.Println(err)
-		return nil, err
-	}
-	return dump, nil
+	return
 }
 
-// generate markdown from projects list
+// makeMarkdown generate markdown from projects list
 func makeMarkdown(projects []Project) {
 	totalProjectsCount := 0
 	// group projects by topics
@@ -158,8 +162,8 @@ func filter(vs []string, f func(string) bool) []string {
 	return vsf
 }
 
-// retrieve and extract projects from Github API
-func getProjects(lang string, topic string, page int, projectsChan *chan Project) {
+// downloadProjects retrieve and extract projects from Github API (goroutine)
+func downloadProjects(lang string, topic string, page int, projectsChan *chan Project) {
 	defer wg.Done()
 
 	// make request
@@ -173,7 +177,7 @@ func getProjects(lang string, topic string, page int, projectsChan *chan Project
 	url := fmt.Sprintf("%s?%s", searchAPI, values.Encode())
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		fmt.Println(err)
+		os.Stderr.WriteString(err.Error())
 		return
 	}
 	// demand topics list
@@ -183,7 +187,7 @@ func getProjects(lang string, topic string, page int, projectsChan *chan Project
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println(err)
+		os.Stderr.WriteString(err.Error())
 		return
 	}
 	defer resp.Body.Close()
@@ -193,7 +197,7 @@ func getProjects(lang string, topic string, page int, projectsChan *chan Project
 		Items []ProjectImport `json:"items"`
 	}
 	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
-		fmt.Println(err)
+		os.Stderr.WriteString(err.Error())
 		return
 	}
 	lang = topic // for filtering
