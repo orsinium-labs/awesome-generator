@@ -1,5 +1,9 @@
 # Awesome generator
 
+<h1 align="center">
+	![Awesome Generator logo](logo.png)
+</h1>
+
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
 Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/generated-awesomeness).
