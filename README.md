@@ -2,6 +2,8 @@
 
 ![Awesome Generator logo](logo.png)
 
+![[Go report](https://goreportcard.com/report/github.com/orsinium/awesome-generator)](https://goreportcard.com/badge/github.com/orsinium/awesome-generator) ![[Code size](https://github.com/orsinium/awesome-generator)](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg) ![[License](https://github.com/orsinium/awesome-generator/blob/master/LICENSE)](https://img.shields.io/github/license/orsinium/awesome-generator.svg)
+
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
 Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/generated-awesomeness).
