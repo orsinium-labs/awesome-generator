@@ -2,7 +2,7 @@
 
 ![Awesome Generator logo](logo.png)
 
-[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator/blob/master/LICENSE)
+[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](LICENSE)
 
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
@@ -35,7 +35,6 @@ Generate awesome list from JSON:
 ```bash
 cat python.json | go run main.go > python.md
 ```
-
 
 ## Command line arguments
 
