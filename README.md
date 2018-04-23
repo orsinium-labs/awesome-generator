@@ -8,6 +8,7 @@ Generate awesome list for any language over [Github search API](https://develope
 
 Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/generated-awesomeness).
 
+
 ## Installation
 
 [Download](https://github.com/orsinium/awesome-generator/releases) binary for latest release or install from source:
@@ -16,6 +17,7 @@ Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/gen
 go get github.com/orsinium/awesome-generator
 cd $GOPATH/src/orsinium/awesome-generator
 ```
+
 
 ## Usage
 
@@ -31,6 +33,13 @@ Generate awesome list for topic:
 go run awesome.go -t docker > docker.md
 ```
 
+If you're download binary release then use it instead of `go run awesome.go`:
+
+```bash
+./linux-amd64.bin -t docker > docker.md
+```
+
+
 ## Advanced usage
 
 Save projects to JSON:
@@ -44,6 +53,7 @@ Generate awesome list from JSON:
 ```bash
 cat python.json | go run awesome.go > python.md
 ```
+
 
 ## Command line arguments
 
