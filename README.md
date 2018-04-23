@@ -8,18 +8,27 @@ Generate awesome list for any language over [Github search API](https://develope
 
 Generated awesome lists: [generated-awesomeness](https://github.com/orsinium/generated-awesomeness).
 
+## Installation
+
+[Download](https://github.com/orsinium/awesome-generator/releases) binary for latest release or install from source:
+
+```bash
+go get github.com/orsinium/awesome-generator
+cd $GOPATH/src/orsinium/awesome-generator
+```
+
 ## Usage
 
 Generate awesome list for language:
 
 ```bash
-go run main.go -l python > python.md
+go run awesome.go -l python > python.md
 ```
 
 Generate awesome list for topic:
 
 ```bash
-go run main.go -t docker > docker.md
+go run awesome.go -t docker > docker.md
 ```
 
 ## Advanced usage
@@ -27,19 +36,19 @@ go run main.go -t docker > docker.md
 Save projects to JSON:
 
 ```bash
-go run main.go -l python --json > python.json
+go run awesome.go -l python --json > python.json
 ```
 
 Generate awesome list from JSON:
 
 ```bash
-cat python.json | go run main.go > python.md
+cat python.json | go run awesome.go > python.md
 ```
 
 ## Command line arguments
 
-* `-l` -- language. `go run main.go -l python`
-* `-t` -- topic. `go run main.go -t docker`
-* `--json` -- dump projects to json. `go run main.go -l python --json`
-* `--pages` -- count of pages (default 10). `go run main.go -l python --pages 5`
-* `--min` -- minimum projects into one section (default 2). `go run main.go -l python --min 3`
+* `-l` -- language. `go run awesome.go -l python`
+* `-t` -- topic. `go run awesome.go -t docker`
+* `--json` -- dump projects to json. `go run awesome.go -l python --json`
+* `--pages` -- count of pages (default 10). `go run awesome.go -l python --pages 5`
+* `--min` -- minimum projects into one section (default 2). `go run awesome.go -l python --min 3`
