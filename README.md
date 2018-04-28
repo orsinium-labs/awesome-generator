@@ -2,7 +2,7 @@
 
 ![Awesome Generator logo](logo.png)
 
-[![Build Status](https://travis-ci.org/orsinium/awesome-generator.svg?branch=master)](https://travis-ci.org/orsinium/awesome-generator)[![Build status](https://ci.appveyor.com/api/projects/status/ewj39mecs5jvdhdh/branch/master?svg=true)](https://ci.appveyor.com/project/orsinium/awesome-generator/branch/master)[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/orsinium/awesome-generator.svg?branch=master)](https://travis-ci.org/orsinium/awesome-generator)[![Build status](https://ci.appveyor.com/api/projects/status/5rlai32aaj62v86c/branch/master?svg=true)](https://ci.appveyor.com/project/orsinium/awesome-generator/branch/master)[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](LICENSE)
 
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
