@@ -1,28 +1,13 @@
 dist: trusty
-
 sudo: required
-
 language: go
-
-git:
-  depth: 1
-
-matrix:
-  fast_finish: true
-
 os:
   - linux
   - osx
-
 go:
   - "1.9"
   - master
-
 before_script:
-  - go get github.com/bradfitz/slice
-
+  - go get github.com/orsinium/awesome-generator
 script:
   - go build awesome.go
-
-notifications:
-  email: false

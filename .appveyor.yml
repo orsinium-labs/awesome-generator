@@ -8,7 +8,7 @@ shallow_clone: true
 matrix:
   fast_finish: true
 
-clone_folder: c:\gopath\src\github.com\account\myproject
+clone_folder: c:\gopath\src\github.com\orsinium\awesome-generator
 
 environment:
   GOPATH: c:\gopath
@@ -19,7 +19,7 @@ install:
   - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
   - go version
   - go env
-  - go get github.com/bradfitz/slice
+  - go get github.com/orsinium/awesome-generator
 
 build_script:
   - go build awesome.go
