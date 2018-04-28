@@ -2,7 +2,7 @@
 
 ![Awesome Generator logo](logo.png)
 
-[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](LICENSE)
+[![Build Status](https://travis-ci.org/Neargye/awesome-generator.svg?branch=master)](https://travis-ci.org/Neargye/awesome-generator)[![Build status](https://ci.appveyor.com/api/projects/status/mk9xlkugf2xtdcy7/branch/master?svg=true)](https://ci.appveyor.com/project/Neargye/awesome-generator/branch/master)[![Go report](https://goreportcard.com/badge/github.com/orsinium/awesome-generator)](https://goreportcard.com/report/github.com/orsinium/awesome-generator) [![Code size](https://img.shields.io/github/languages/code-size/orsinium/awesome-generator.svg)](https://github.com/orsinium/awesome-generator) [![License](https://img.shields.io/github/license/orsinium/awesome-generator.svg)](LICENSE)
 
 Generate awesome list for any language over [Github search API](https://developer.github.com/v3/search/#search-repositories).
 
