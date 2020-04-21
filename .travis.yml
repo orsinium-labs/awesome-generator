@@ -18,8 +18,5 @@ go:
   - "1.14.2"
   - master
 
-before_script:
-  - go get github.com/bradfitz/slice
-
 script:
   - go build awesome.go

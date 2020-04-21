@@ -10,8 +10,6 @@ import (
 	"sort"
 	"strings"
 	"sync"
-
-	"github.com/bradfitz/slice"
 )
 
 func main() {
