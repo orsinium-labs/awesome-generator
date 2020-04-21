@@ -15,7 +15,7 @@ os:
   - osx
 
 go:
-  - "1.12.1"
+  - "1.14.2"
   - master
 
 before_script:
